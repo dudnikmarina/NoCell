@@ -1,0 +1,40 @@
+.patent-block {
+	padding: 48px 0 20px;
+
+	&.bg-style {
+
+		@include media('>=desktop') {
+			padding: 145px 0;
+		}
+	}
+
+	.btn {
+		text-transform: uppercase;
+	}
+}
+
+.patent-box {
+	@include media('>=desktop') {
+		display: flex;
+		align-items: center;
+	}
+}
+
+.patent-image {
+	width: 200px;
+	margin: 0 auto 50px;
+
+	@include media('>=phone') {
+		width: 286px;
+	}
+
+	@include media('>=desktop') {
+		margin: 0 50px 0 0;
+	}
+}
+
+.patent-text {
+	@include media('>=desktop') {
+		flex: 1 0;
+	}
+}

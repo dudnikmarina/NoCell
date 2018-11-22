@@ -1,0 +1,43 @@
+.more-block {
+	&.active {
+		.opener {
+			&:after {
+				@include icon-icomoon($content: "\e90b", $font-size: 15px);
+			}
+
+			&:before {
+				content: 'Show Less';
+			}
+		}
+	}
+
+	.opener {
+		position: relative;
+		color: inherit;
+		display: inline-block;
+		min-width: 95px;
+		min-height: 23px;
+		text-decoration: none;
+
+		&:after {
+			@include icon-icomoon($content: "\e909", $font-size: 15px);
+			position: absolute;
+			top: 50%;
+			right: 0;
+			font-weight: bold;
+			transform: translateY(-50%);
+		}
+
+		&:before {
+			position: absolute;
+			display: block;
+			content: 'Show More';
+			top: 0;
+			left: 0;
+		}
+
+		&:hover {
+			opacity: .8;
+		}
+	}
+}

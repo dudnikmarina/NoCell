@@ -1,0 +1,79 @@
+.banner-block {
+	@include bg-styles;
+	position: relative;
+	color: $white;
+	text-align: center;
+	padding: 125px 0 95px;
+	z-index: 1;
+
+	&.banner-lg {
+		padding: 70px 0 0;
+		font-size: 20px;
+
+		@include media('>=phone') {
+			padding: 120px 0 0;
+		}
+
+		@include media('>=tablet') {
+			font-size: 24px;
+			padding: 165px 0 0;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.3);
+		z-index: -1;
+	}
+
+	.banner-main {
+		padding: 0 0 60px;
+
+		@include media('>=phone') {
+			padding: 0 0 85px;
+		}
+
+		@include media('>=tablet') {
+			padding: 0 0 108px;
+		}
+
+		.container {
+			max-width: 1205px;
+		}
+	}
+
+	p {
+		margin: 0 0 30px;
+	}
+
+	.image-holder {
+		margin: 0 0 20px;
+	}
+
+	.title-decor,
+	h1,
+	h2 {
+		color: inherit;
+
+		&:after {
+			background: $white;
+		}
+	}
+
+	h1 {
+		margin: 0;
+	}
+
+	.feature-block {
+		border-color: #30a6dd;
+	}
+}

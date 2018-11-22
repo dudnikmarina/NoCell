@@ -1,0 +1,194 @@
+.accordion-main {
+	@extend %listreset;
+	color: $white;
+
+	@include media('<tablet') {
+		padding: 15px 0 0;
+	}
+
+	>li {
+		position: relative;
+		border-bottom: 5px solid $white;
+
+		&:after {
+			position: absolute;
+			content: '';
+			background: $primary;
+			width: 9999px;
+			top: 0;
+			bottom: 0;
+			left: -20px;
+			z-index: -1;
+
+			@include media('>=phone') {
+				left: -60px;
+			}
+
+			@include media('>=tablet') {
+				left: 0;
+			}
+		}
+
+		&:last-child {
+			border: none;
+		}
+
+		&:nth-child(even) {
+			&:after {
+				background: $secondary;
+			}
+
+			.opener {
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+
+		&.active {
+			color: inherit;
+
+			.opener {
+				&:after {
+					@include icon-icomoon($content: "\e90b", $font-size: 23px);
+				}
+			}
+		}
+
+		p {
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	.opener {
+		position: relative;
+		display: block;
+		font-size: 25px;
+		font-weight: 700;
+		line-height: 1;
+		color: inherit;
+		text-decoration: none;
+		padding: 28px 15px 28px 0;
+
+		@include media('>=phone') {
+			font-size: 36px;
+		}
+
+		@include media('>=tablet') {
+			padding: 28px 35px 28px 25px;
+		}
+
+		@include media('>=desktop') {
+			padding: 28px 35px 28px 41px;
+		}
+
+		&:after {
+			@include icon-icomoon($content: "\e909", $font-size: 23px);
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+
+			@include media('>=phone') {
+				right: -34px;
+			}
+		}
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+
+	.slide {
+		font-size: 20px;
+		padding: 0 0 28px;
+
+		@include media('>=tablet') {
+			padding: 0 15px 28px 25px;
+		}
+
+		@include media('>=desktop') {
+			padding: 0 15px 28px 41px;
+		}
+	}
+
+	.ico-list {
+		font-size: 20px;
+		line-height: $line-height-base;
+		font-weight: normal;
+		text-transform: none;
+		color: inherit;
+		margin: 0 0 -20px;
+		padding: 0;
+
+		@include media('>=tablet') {
+			padding: 10px 0 0;
+			display: block;
+		}
+
+		li {
+			padding: 0 0 25px 65px;
+
+			@include media('>=tablet') {
+				width: auto;
+			}
+
+			@include media('>=desktop') {
+				padding: 0 0 37px 105px;
+			}
+		}
+
+		[class*="ico-"],
+		[class^="ico-"] {
+			position: absolute;
+			top: -6px;
+			left: 10px;
+			font-size: 35px;
+
+			@include media('>=desktop') {
+				top: -17px;
+				font-size: 50px;
+			}
+		}
+	}
+
+	.cards-list {
+		margin: 0 -10px -37px;
+
+		@include media('>=tablet') {
+			margin-right: -50px;
+		}
+
+		@include media('>=widescreen') {
+			margin-right: -108px;
+		}
+		.card {
+			display: flex;
+			align-items: center;
+			width: calc(305px - 20px);
+			margin: 0 10px;
+			padding: 0 0 37px;
+
+			h4 {
+				strong {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.text-card {
+		@include media('>=tablet') {
+			padding: 0;
+		}
+	}
+
+	.image-card {
+		width: 88px;
+		height: 88px;
+		margin: 0 25px 0 0;
+	}
+}
+

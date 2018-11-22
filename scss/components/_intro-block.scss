@@ -1,0 +1,207 @@
+.intro-block {
+	font-size: 20px;
+	color: $white;
+	text-align: center;
+
+	@include media('>=tablet') {
+		font-size: 24px;
+	}
+
+	h1 {
+		color: inherit;
+		text-align: center;
+		margin: 0;
+	}
+
+	.image-item {
+		text-align: center;
+		margin: 0 0 20px;
+
+		img {
+			display: inline;
+		}
+	}
+
+	.btn {
+		letter-spacing: -1.1px;
+		margin: 0 0 50px;
+
+		@include media('>=tablet') {
+			margin: 0 0 70px;
+		}
+	}
+
+	.links-group {
+		letter-spacing: -1.08px;
+	}
+}
+
+.item-slider {
+	@include bg-styles;
+	position: relative;
+	display: flex !important;
+	align-items: center;
+	height: calc(100vh - 79px);
+	min-height: 700px;
+	padding: 50px 0 70px;
+	z-index: 1;
+
+	@include media('>=phone') {
+		height: calc(100vh - 82px);
+	}
+
+	@include media('>=tablet') {
+		height: calc(100vh - 91px);
+		padding: 70px 0;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: rgba(0, 0, 0, 0.63);
+		z-index: -1;
+	}
+
+	.container {
+		max-width: 970px;
+	}
+}
+
+.heading-item,
+.text-item,
+.btn-fade,
+.links-group {
+	opacity: 0;
+}
+
+.slick-active {
+	.heading-item {
+		animation: heading 11s 1s both;
+		@keyframes heading {
+			0% {
+				opacity:0;
+			}
+			25% {
+				opacity:1;
+			}
+			50% {
+				opacity: 1;
+			}
+			75% {
+				opacity:1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	}
+
+	.text-item {
+		animation: text 9.5s 2.5s both;
+		@keyframes text {
+			0% {
+				opacity:0;
+			}
+			25% {
+				opacity:1;
+			}
+			50% {
+				opacity: 1;
+			}
+			75% {
+				opacity:1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	}
+
+	.btn-fade {
+		animation: button 7.5s 4s both;
+		@keyframes button {
+			0% {
+				opacity:0;
+			}
+			25% {
+				opacity:1;
+			}
+			50% {
+				opacity: 1;
+			}
+			75% {
+				opacity:1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	}
+
+	.links-group {
+		animation: button 6s 5s both;
+		@keyframes button {
+			0% {
+				opacity:0;
+			}
+			25% {
+				opacity:1;
+			}
+			50% {
+				opacity: 1;
+			}
+			75% {
+				opacity:1;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.slider-main {
+	.pagination {
+		@extend %listreset;
+		position: absolute;
+		display: flex;
+		left: 50%;
+		height: 20px;
+		transform: translateX(-50%);
+		bottom: 30px;
+		margin: 0 -8px;
+
+		li {
+			padding: 0 8px;
+		}
+
+		button {
+			@include animate(background);
+			text-indent: -9999px;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			padding: 0;
+			background: 0;
+			border: 2px solid $white;
+
+			&:focus {
+				outline: none;
+			}
+
+			&:hover {
+				background: $white;
+			}
+		}
+
+		.slick-active {
+			button {
+				background: $white;
+			}
+		}
+	}
+}

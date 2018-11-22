@@ -1,0 +1,65 @@
+.btn {
+	display: inline-block;
+	vertical-align: top;
+	font-size: $btn-font-size;
+	padding: $btn-padding;
+	margin: 0 0 20px;
+	background: $btn-background;
+	text-decoration: none;
+	border: 1px solid $secondary;
+
+	@include media('>=phone') {
+		font-size: 24px;
+		padding: 7px 40px;
+	}
+
+	&:hover {
+		color: $white;
+		background: $primary;
+		border-color: $primary;
+	}
+
+	&.btn-prymary {
+		border-color: $white;
+
+		&:hover {
+			border-color: $primary;
+		}
+	}
+
+	&.btn-light {
+		color: $white;
+		border-color: $white;
+		background: rgba(255, 255, 255, .17);
+
+		&:hover {
+			border-color: $primary;
+			background: rgba(255, 255, 255, .41);
+			border-color: $white;
+		}
+	}
+
+	&.btn-arrow {
+		position: relative;
+		padding-right: 50px;
+
+		@include media('>=phone') {
+			padding-right: 60px;
+		}
+
+		&:after {
+			@include icon-icomoon($content: "\e911", $font-size: inherit);
+			@include animate(color);
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			font-size: 40px;
+			color: $yellow;
+			transform: translateY(-50%);
+
+			@include media('>=phone') {
+				font-size: 60px;
+			}
+		}
+	}
+}

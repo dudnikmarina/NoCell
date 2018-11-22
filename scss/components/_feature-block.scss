@@ -1,0 +1,65 @@
+.feature-block {
+	font-size: 20px;
+	color: $white;
+	text-align: left;
+	background: rgba(56, 173, 226, .79);
+	border-bottom: 3px solid $white;
+	padding: 20px 0;
+
+	@include media('>=tablet') {
+		font-size: 24px;
+	}
+
+	.container {
+		max-width: 1320px;
+
+		@include media('>=desktop') {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	p {
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.btn {
+		margin: 0;
+		text-transform: uppercase;
+		padding: 15px 25px;
+		background: 0;
+		color: inherit;
+		border: 3px solid $primary;
+
+		@include media('<phone') {
+			font-size: 18px;
+		}
+
+		&:hover {
+			background: $primary;
+		}
+	}
+
+	.btn-holder {
+		text-align: center;
+
+		@include media('>=desktop') {
+			width: 350px;
+			margin: 0 0 0 20px;
+		}
+	}
+
+	.text-feature {
+		padding: 0 0 20px;
+
+		@include media('>=tablet') {
+			flex: 1 0;
+
+			@include media('>=desktop') {
+				padding: 0;
+			}
+		}
+	}
+}

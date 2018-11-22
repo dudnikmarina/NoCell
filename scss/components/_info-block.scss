@@ -1,0 +1,51 @@
+.info-block {
+	padding: 65px 0 40px;
+
+	.container {
+		@include media('>=desktop') {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.text-wrap {
+		padding: 0 0 20px;
+	}
+
+	.btn {
+		&.btn-arrow {
+			&:after {
+				color: $primary;
+			}
+		}
+
+		&:hover {
+			&:after {
+				color: $white;
+			}
+		}
+	}
+
+	.title-decor {
+		@include media('>=desktop') {
+			letter-spacing: -.7px;
+		}
+	}
+}
+
+.info-image{
+	margin: 0 0 55px;
+	text-align: center;
+
+	@include media('>=desktop') {
+		flex: 1 0;
+		margin: 0 40px 0 0;
+		text-align: left;
+	}
+}
+
+.info-text {
+	@include media('>=desktop') {
+		width: 51%;
+	}
+}

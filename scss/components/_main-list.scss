@@ -1,0 +1,41 @@
+.main-list {
+	@extend %listreset;
+	margin: 0 0 20px;
+
+	li {
+		position: relative;
+		padding: 0 0 0 21px;
+
+		&:after {
+			@include icon-icomoon($content: "\f00c", $font-size: inherit);
+			position: absolute;
+			top: 2px;
+			left: 0;
+			font-size: 17px;
+			color: $primary;
+		}
+	}
+
+	&.count-list {
+		max-width: 855px;
+		margin: 0 auto 50px;
+
+		@include media('>=phone-lg') {
+			column-count: 2;
+		}
+
+		@include media('>=desktop') {
+			column-gap: 122px;
+			margin: 0 auto 70px;
+		}
+
+		li {
+			@include media('>=phone-lg') {
+				break-inside: avoid;
+				page-break-inside: avoid;
+			}
+		}
+	}
+}
+
+

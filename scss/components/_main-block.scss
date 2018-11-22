@@ -1,0 +1,7 @@
+.main-block {
+	padding: 70px 0 22px;
+
+	@include media('>=tablet') {
+		padding: 53px 0 35px;
+	}
+}
